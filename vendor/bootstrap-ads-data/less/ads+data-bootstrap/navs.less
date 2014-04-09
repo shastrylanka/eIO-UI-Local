@@ -1,0 +1,69 @@
+//
+// Navs
+// --------------------------------------------------
+
+.nav > li > a {
+    font-size: 12px;
+
+    margin: @nav-link-margin;
+}
+
+.nav.nav-pills > li > a {
+	padding-right: 10px;
+	padding-left: 10px;
+	margin: 3px;
+}
+
+.nav.nav-tabs {
+	border-bottom: none;
+
+	> li {
+		&.active > a {
+			color: @nav-tabs-active-link-color;
+			border: none;
+			border-bottom: 2px solid @nav-tabs-active-link-hover-border-color;
+			padding: 0 0 9px 0;
+
+			&:hover {
+				border: none;
+				border-bottom: 2px solid @nav-tabs-active-link-hover-border-color;
+			}
+		}
+
+		&.open {
+			> a {
+				border: none;
+				border-bottom: 2px solid #eee;
+				padding: 0 0 9px 0;
+				background-color: transparent;
+
+				&:hover {
+					border: none;
+					border-bottom: 2px solid #eee;
+					background-color: transparent;
+				}
+			}
+		}
+
+		> a {
+			font-size: 13px;
+			color: @nav-tab-link-color;
+			border: none;
+			border-bottom: 1px solid #eee;
+			padding: 0 0 10px 0;
+			margin-right: 25px;
+
+			&:active,
+			&:hover {
+				border: none;
+				border-bottom: 1px solid #eee;
+				background-color: transparent; //
+			}
+
+			&.disabled {
+				color: #ccc;
+				cursor: default;
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+{
+    "excludes": {
+        "path": [
+            "*\/screwdriver\/*",
+            "*\/app\/*",
+            "*\/node_modules/*runt*\/*",
+            "*\/node_modules/karma*\/*",
+            "*\/node_modules/bower*\/*"
+        ]
+    }
+}

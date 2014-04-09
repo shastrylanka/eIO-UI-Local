@@ -1,0 +1,872 @@
+
+@import "custom/variables";
+
+@import "../../vendor/bootstrap-ads-data/less/default/mixins.less";
+@import "../../vendor/bootstrap-ads-data/less/ads+data-bootstrap/mixins.less";
+@import "../../vendor/bootstrap-ads-data/less/default/bootstrap.less";
+@import "../../vendor/bootstrap-ads-data/less/ads+data-bootstrap/bootstrap.less";
+@import "../../vendor/lesshat/build/lesshat-prefixed.less";
+
+
+// Add Styles Here that are specific to your application
+
+#busy-overlay {
+  div.cover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    opacity: 0.5; filter: alpha(opacity=50); width: 100%; // filter and width for older IE support
+    z-index: 1040; // must be high enough to clear all non-cover page elements
+  }
+  img {
+     position: fixed;
+     top: 145px;
+     right: 50%;
+     z-index: 1042;
+  }
+}
+
+#tcModal .modal-body {
+  max-height: 800px;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+.input-group-addon{
+  text-align: left;
+}
+
+.container-body {
+  margin-top: 80px;
+  color: #333;
+  text-align: left;
+}
+
+.container-header {
+  color: #333;
+  text-align: left;
+}
+
+.menu-items {
+  width: 250px;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #fff;
+  margin-top: 8px;
+  border-radius: 3px;
+  .lh-box-shadow(0 7px 12px 4px rgba(7, 6, 6, 0.19));
+
+  .is-active {
+  background: @blue;
+
+  a {
+    color: @white;
+  }
+  }
+
+  a {
+  padding: 10px;
+  padding-left: 15px;
+  display: block;
+  color: @black;
+  text-decoration: none;
+
+  &:hover {
+    background: @blue;
+    color: @white;
+    text-decoration: none;
+  }
+  }
+}
+
+.container-workspace {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.data-form {
+  .lh-transition(.5s ease-out .1s);
+  width: 285px;
+  height: 99.9%;
+  .form-group {
+    // .text-alignable;
+
+    &.dirty,
+    &.saved,
+    &.error {
+      font-family: @font-family-strong;
+      font-weight: bold;
+      padding-left: 12px;
+    }
+
+    &.dirty {
+      border-left: 4px solid @yellow;
+    }
+
+    &.saved {
+      border-left: 4px solid @green;
+    }
+
+    &.error {
+      border-left: 4px solid @red;
+    }
+
+    input {
+      border: 1px solid #585655;
+    }
+    button {
+      color: #828282;
+      padding: 6px 15px 5px;
+      .lh-background-image(linear-gradient(to bottom, #FFF 0%, #e0dce0 100%));
+      .lh-border-radius(3px);
+      border: 1px solid #c5c7c5;
+      .lh-box-shadow(0 1px 1px rgba(000, 000, 000, 0.2), inset 0 0 3px rgba(255, 255, 255, 0.6));
+      text-shadow: 0 -1px 0 rgba(000, 000, 000, 0), 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.well-blue {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #400090;
+  border: 1px solid #e3e3e3;
+  font-weight:bold;
+  color:#FFFFFF;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          
+}
+
+.btn-primary-blue {
+  color: #ffffff;
+  background-color: #400090;
+  border-color: #400090;
+  border-top-width: 1px;
+  border-right-width: 2px;
+  border-bottom-width: 1px;
+  border-left-width: 2px;
+  font-weight:bold;
+}
+
+.contact-table-td{
+	text-align:right;
+  	font-weight:bold;
+  	width:35%;
+}
+
+.gray-fill{
+	background-color:#C0C0C0;
+}
+
+.rightalign{
+	float:right;
+	width:40%;
+}
+
+.order-status{
+	text-align:right;
+	float:right;
+	margin-right: 10px;
+}
+
+.status-label{
+	color:red;
+}
+
+.print-label{
+	color:#400090;
+}
+
+.table-scroll{
+	height:170px;
+	overflow:auto;
+}
+
+.static-header{
+	position:absolute;
+}
+
+.width5{
+	width:5%;
+}
+
+.width10{
+	width:10%;
+}
+
+.width15{
+	width:15%;
+}
+
+.width20{
+	width:20%;
+}
+
+.width25{
+	width:25%;
+}
+
+.width30{
+	width:30%;
+}
+
+.width40{
+	width:40%;
+}
+
+#heading{
+    text-align:center;
+    float:center;
+    font-weight:bold;
+    font-size:200%;
+}
+
+.print-logo {
+	content:icon;
+	icon:url("/assets/img/print.png");
+}
+
+.modal-title{
+	font-weight:bold;
+}
+
+// Secondary Grays (Necessary for Ember-Tables-Support)
+@gray-7: #b4b4b4;
+
+
+
+
+#logo {
+  left: 50px;
+  top: 6px;
+  width: 250px;
+  height: 60px;
+  background-image: url("/assets/img/yahooImg.png");
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+  -o-transition: .2s;
+}
+
+.header {
+  border-bottom :2 !important;
+}
+
+.navbar-inverse-io{
+  border-bottom :2 !important;
+}
+
+/* Definig a panel*/
+
+.panel-custom {
+  border-color: #5F6664;
+}
+
+.panel-custom > .panel-heading {
+  color: #ffffff;
+  background-color: #5F6664;
+  border-color: #5F6664;
+}
+
+.panel-custom > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #5F6664;
+}
+
+.panel-custom > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #5F6664;
+}
+
+.panel-custom > .panel-heading {
+  color: #ffffff;
+  background-color: #5F6664;
+  border-color: #5F6664;
+}
+
+.panel-custom > .panel-heading + .panel-collapse .panel-body {
+  border-top-color: #5F6664;
+}
+
+.panel-custom > .panel-heading .panel-title {
+  color: #ffffff;
+}
+
+.panel-custom > .panel-footer + .panel-collapse .panel-body {
+  border-bottom-color: #5F6664;
+}
+
+/* 1. GENERAL */
+
+.body {
+  color: #fff !important;
+  text-align: left;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: #00e;
+    cursor: pointer;
+}
+
+.clearfloat:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfloat {
+  display: inline-table;
+}
+
+.clearfloat {
+  display: block;
+  zoom: 1;
+}
+
+h1 {
+  display: block;
+  font-size: 153.9%;
+}
+
+label, h2, h3 {
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+em {
+  font-style: italic;
+}
+
+fieldset {
+  margin-top: 5px;
+}
+
+
+/* 2. HEADER */   
+
+#hd { /* this logo will need to change based on market */
+  border-bottom: 1px solid #000;
+  padding: 10px;
+  display: inline-table;
+  display: block;
+  zoom: 1;
+}
+
+#hd:after, .top-info-box div:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+#hd h1 {
+  padding: 60px 0 0 20px;
+}
+
+#hd h3 {
+  padding: 60px 0 0 20px;
+}
+
+
+.hd-links {
+    font: bold 77% verdana;
+    float: right;
+    margin-right: 8px;
+    text-align: right;
+}
+
+.hd-links a {
+    margin-left: 10px;
+}
+
+.support-link {
+    background: url(images/email.gif) no-repeat left;
+    padding-left: 17px;
+}
+
+.help-link {
+    background: url(images/help.gif) no-repeat left;
+    padding-left: 17px;
+}
+
+.top-info-box {
+  margin-top: 8px;
+  padding: 5px;
+  border: 1px solid #400090;
+  background-color: #ffffff;
+  font-weight: normal;
+  text-align: left;
+}
+
+
+/* 3. NAVIGATION */
+
+#nav {
+    clear: both;
+    font-size: 92%;
+    background: #fff;
+}
+
+#nav div {
+    float: right;
+    padding-right: 10px;
+  margin-top: 3px;
+  font: 85% verdana;
+}
+
+ul.tab-nav {
+    display: block;
+    margin-left: 25px;
+    _margin-left: 15px;
+    font-weight: bold;
+    list-style-type: none;
+    float: left;
+    zoom: 1;
+}
+
+ul.tab-nav li {
+    float: left;
+    background: url(images/tab_l.gif) no-repeat;
+    font-size: 108%;
+    font-weight: bold;
+    color: #666;
+    border-bottom: 2px solid #ededed;
+    margin-top: 5px;
+  padding-left: 5px;
+}
+
+ul.tab-nav li a  {
+    display: block;
+    width: auto;
+    float: left;
+    background: url(images/tab_r.gif) no-repeat top right;
+    margin-right: 1px;
+    padding: 8px 7px 6px 3px;
+    text-align: center;
+    color: #666;
+}
+
+ul.tab-nav li a:visited {
+  color: #666;
+}
+
+ul.tab-nav li.selected {
+    background-image: url(images/tab_lo.gif);
+    border-bottom: 1px solid #b6d5eb;
+}
+
+ul.tab-nav li.selected a {
+    background-image: url(images/tab_ro.gif);
+    border-bottom: 1px solid #b6d5eb;
+    color: #000;
+}
+
+ul.tab-nav li.off a, ul.tab-nav li.off a:visited {
+   color: #666;
+}
+
+ul.tab-subnav {
+    text-align: left;
+    clear: both;
+    display: block;
+    list-style-type: none;
+    background-color: #b6d5eb;
+    border-bottom: 1px solid #78add2;
+    padding: 5px 0 0 25px;
+    height: 1.7em;
+}
+
+ul.tab-subnav li, ul.tab-subnav li.selected {
+    display: inline;
+    font: bold 85% verdana;
+}
+
+.io-status {
+  display: block;
+    font-weight: bold;
+  color: #f00;
+  margin-bottom: 5px;
+}
+
+.io-print {
+  background: url(images/print.gif) no-repeat left center;
+  padding-left: 16px;
+  cursor: pointer;
+}
+
+
+/* 4. CONTENT & LAYOUT */
+
+#content {
+    background: #FFF;
+    font-size: 93%;
+    padding: 10px 18px 20px 18px;
+    line-height: 1.2;
+    width: auto;
+}
+
+#two-column .left, #two-column .combined .left, #three-column .left, #three-column .center {
+  float: left;
+}
+
+#three-column .center {
+  margin: 0 1.25%;
+}
+
+#two-column .left, #two-column .right {
+    width: 49%;
+}
+
+#three-column .left, #three-column .center, #three-column .right {
+    width: 32.5%;
+}
+
+#two-column .right, #three-column .right {
+  float: right;
+}
+
+#two-column .right, #three-column .right, #two-column .combined .left {
+  margin-right: 0;
+}
+
+.combined .left {
+  padding-right: 10px;
+  border-right: 1px solid #cbcbcb;
+}
+
+
+/* 5. INFORMATION BOXES */
+
+.wrapper {
+    border-right: 2px solid #dedede;
+    border-bottom: 3px solid #dedede;
+    margin-bottom: 10px;
+}
+
+.box {
+  border: 1px solid #999;
+}
+
+.box-hdr {
+    background: url(img/grad.gif) repeat-x top left;
+    padding: 0 10px;
+    margin: 0px;
+    background-color: #FFF;
+    font-weight: bold;
+    color: #666;
+    height: 25px;
+    text-align: left;
+}
+
+.box-hdr h2 {
+    float: left; 
+    font-weight: bold;
+    padding: 3px 4px 3px 0;
+    color: #666;
+}
+
+.box-hdr p {
+    float: right;
+    font-weight: bold;
+    padding: 3px 4px 3px 0;
+    color: #666;
+}
+
+
+.box-content {
+    padding: 15px 20px;
+}
+
+.campaign-hdr {
+  background-color: #fffbef;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.campaign-hdr .start, .campaign-hdr .end {
+  float: right;
+  
+}
+
+.campaign-hdr .start {
+  margin-right: 15px;
+}
+
+.actions {
+  text-align: right;
+}
+
+
+/* 6. TABLE STYLES */
+
+table {
+  border-collapse: collapse;
+}
+
+.io-info td {
+  padding: 2px 10px 2px 0;
+}
+
+.io-data {
+  width: 100%;
+}
+
+.io-data th {
+  background: url(images/table-th.gif) repeat-x 0 0;
+  text-align: center;
+  border-top: 1px solid #999;
+    border-bottom: 1px solid #cbcbcb;
+    border-right: 1px solid #cbcbcb;
+    padding: 10px 0;
+}
+
+.io-data td {
+  text-align: center;
+  padding: 2px 0;
+  /*border-top: 1px solid #cbcbcb;*/
+    border-right: 1px solid #cbcbcb;
+}
+
+.section-hdr {
+  background-color: #b9e4fe;
+  font-size: 25%;
+}
+
+.section-hdr td {
+  text-align: left;
+  padding: 3px 10px;
+}
+
+.collapsed-row {
+  background-color: #e8e8e8;
+}
+
+.visible-row, .alternate {
+  background-color: #f4f4f4;
+}
+
+.collapsed-row td, .visible-row td {
+  border: 0;
+}
+
+td.toggle-collapsed { /* need to declare as td to override alignment */
+  text-align: left;
+  background: url(images/collapsed.gif) no-repeat 10px center;
+  background-color: inherit;
+  padding: 3px 25px;
+  cursor: pointer;
+}
+
+td.toggle-visible {
+  text-align: left;
+  background: url(images/visible.gif) no-repeat 10px center;
+  background-color: inherit;
+  padding: 3px 25px;
+  cursor: pointer;
+}
+
+.line-details td {
+  text-align: left;
+  border: 0;
+  padding: 0 7px;
+}
+
+td.data-cell {
+  text-align: right;
+  padding-right: 10px;
+}
+
+td.left-align {
+  text-align: left;
+  padding-left: 10px;
+}
+
+.total-row td {
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+td.total-label { /* need to declare as td to override alignment */
+  text-align: right;
+  padding-right: 7px;
+}
+
+td.span-column { /* need to declare as td to override border */
+  border-right: 0;
+}
+
+.contrast-column {
+  background-color: #ccc;
+}
+
+.info-box-label {
+  font-weight: bold;
+  text-align: right;
+  padding-right: 7px;
+}
+
+/* 7. BUTTONS & SKINS */
+
+.action-button, .cancel-button, .button-group button, .button-group button:hover, .button-group button.hover {
+    border: 1px solid;
+    border-top-color: #dedede;
+    border-left-color: #dedede;
+    border-bottom-color: #333;
+    border-right-color: #333;
+    color: #333;
+    font-weight: bold;
+    overflow: visible;
+    padding: 2px 10px;
+    width: auto;
+    margin-left: 8px;
+}
+ 
+.cancel-button, .button-group button, .button-group button:hover, .button-group button.hover {
+    background: #dcdcdc;
+    border-top-color: #fff;
+    border-left-color: #fff;
+} 
+ 
+.action-button, .button-group button.default, .button-group button.hover {
+  background-color: #4a7cbb;
+  color: #fff;
+}
+
+
+/* 8. DIALOGS & SKIN */
+
+.io-dialog-container {
+  font-size: 93%;
+  background-color: #fffbef; 
+  padding: 20px 10px 10px 10px; 
+  text-align: center;
+  border: 1px solid #999;
+}
+
+.io-dialog-container .hd {
+  font-weight: normal;
+  white-space: normal;
+  color: #333;
+  background-color: #fffbef;
+  border: 0;
+  padding: 0 45px;
+  margin-bottom: 20px;
+}
+
+.io-dialog-container .hd h2 {
+  font-size: 138.5%;
+  margin-bottom: 10px;
+}
+
+.io-dialog-container .box {
+  background-color: #fff;
+}
+  
+.terms-content { 
+  text-align: left; 
+  padding: 10px;
+}
+
+.io-form-input {
+  text-align: right; 
+  margin-top: 10px; 
+  margin-right: 0px;
+}
+
+.pc-form-input {
+        text-align: center;
+        margin-top: 10px;
+        margin-right: 0px;
+}
+
+.io-form-input label {
+  margin-right: 8px;
+}
+
+.io-dialog-container .ft {
+  font-size: 123.1%;
+  margin-right: 45px;
+}
+
+.io-panel {
+  font-size: 93%;
+  border: 1px solid #999;
+}
+
+.io-panel .hd {
+  background: url(images/grad.gif) repeat-x top left;
+  border-bottom: 1px solid #999;
+}
+
+.io-panel .hd h2 {
+  color: #666;
+  font-weight: bold;
+}
+
+.io-panel .bd {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.io-panel .ft {
+  font-size: 123.1%;
+  text-align: center;
+}
+
+.rejectForm {
+float:left; padding:10px;
+}
+
+/* 9. FOOTER */
+
+#ft {
+    padding: 10px 0;
+    font: 77% verdana;
+  text-align: center;
+}
+
+
+/* 10. ERROR & REQUIRED */
+
+.field-error {
+  background: url(images/alert.gif) no-repeat top left;
+  text-align: left;
+  padding: 3px 0 3px 20px;
+  font-weight: bold;
+  color: #f63;
+  margin-top: 3px;
+}
+
+.io-form-input .field-error {
+  float: right;
+}
+
+.required {
+  font-weight: bold;
+  color: #f00;
+}
+
+.required span {
+  font: normal 85% verdana;
+  color: #333;
+}
+
+/* Contacts fix */
+#three-column .right {float:left;} #three-column .center, #three-column .right {margin:0; margin-left:1.22%;} 
+
+

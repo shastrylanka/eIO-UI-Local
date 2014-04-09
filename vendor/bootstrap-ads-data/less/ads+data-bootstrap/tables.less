@@ -1,0 +1,21 @@
+//
+// Tables
+// --------------------------------------------------
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped > tbody > tr:nth-child(odd) {
+  > td,
+  > th {
+    background-color: @table-bg-accent;
+    border-top: 0px;
+  }
+}
+.table-striped > tbody > tr:nth-child(even) {
+  > td,
+  > th {
+    border-top: 0px;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "app-kit",
+  "dependencies": {
+    "bootstrap-ads-data": "ssh://git@git.corp.yahoo.com/ads-data/bootstrap.git",
+    "ember": "~>1.2.0",
+    "ember-table-shim": "*",
+    "handlebars": "~1.1.2",
+    "jquery": "~1.9.1",
+    "jquery-ui": "~1.10.2",
+    "qunit": "~1.12.0",
+    "underscore": "~1.5.2",
+    "ember-data": "~1.0.0-beta.3",
+    "ember-resolver": "git://github.com/stefanpenner/ember-jj-abrams-resolver.git#master",
+    "ic-ajax": "~0.2",
+    "lesshat": "~2.0.15",
+    "ylt": "ssh://git@git.corp.yahoo.com/ads-data/yahoo-light-table.git#*"
+  },
+  "resolutions": {
+    "ember": "~1.2.0"
+  }
+}

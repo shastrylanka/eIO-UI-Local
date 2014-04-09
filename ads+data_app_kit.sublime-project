@@ -1,0 +1,34 @@
+{
+    "folders":
+    [
+        {
+        		"name": "Ads+Data App Kit",
+            "follow_symlinks": true,
+            "path": "./",
+            "folder_exclude_patterns": ["*.md", "tmp/*", "node_modules/**/*"]
+        },
+        {
+        		"name": "Ads+Data Bootstrap",
+            "follow_symlinks": true,
+            "path": "./vendor/bootstrap-ads-data"
+        }
+    ],
+    "settings":
+    {
+        "tab_size": 2,
+        "auto_indent": true,
+        "smart_indent": true,
+        "trim_automatic_white_space": true,
+        "highlight_modified_tabs": true,
+        "translate_tabs_to_spaces": false
+    },
+    "build_systems":
+    [
+        {
+            "name": "JSHint",
+            "shell_cmd": "grunt jshint:app --no-color",
+            "file_regex": "^Linting (.*) ...ERROR",
+            "line_regex": "^.*L([0-9]+).*"
+        }
+    ]
+}

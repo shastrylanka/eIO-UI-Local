@@ -1,0 +1,50 @@
+{
+    "version": 2,
+    "shared": {
+        "notification_email": "northm@yahoo-inc.com",
+        "build_container": "node10",
+        "build": {
+          "init": {
+                "task":"init",
+                "npm_install_excludes": ["*/**/package.json"],
+                "before": [{
+                  "task": "script",
+                  "command": "ynpm install --reg=http://registry.npmjs.org --cache=${NPM_CACHE_DIR}"
+                }]
+            }
+        }
+    },
+    "jobs": {
+        "component": {
+          "manhattan_instance": "trunk.development.manhattan.gq1.yahoo.com",
+          "triggers": [
+                "integration"
+          ],
+          "test_results_type": "none",
+          "build": {
+                "lint": {
+                    "//": "TODO - Waiting until lint errors are fixed",
+                    "task": "none"
+                },
+                "test": {
+                    "task": "script",
+                    "command":"ynpm run-script testci",
+                    "after": {
+                        "task": "script",
+                        "command": "ynpm run-script dist"
+                    }
+                },
+                "docs": {
+                    "//": "TODO - figure out doc tool",
+                    "task": "none"
+                },
+                "publish": {
+                    "task": "none"
+                },
+                "deploy": {
+                    "task": "none"
+                }
+            }
+        }
+    }
+}

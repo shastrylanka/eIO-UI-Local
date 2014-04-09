@@ -1,0 +1,73 @@
+//
+// Forms
+// --------------------------------------------------
+
+*:focus {
+    outline: 0;
+}
+
+label {
+	font-weight: 400;
+	color: @form-label-color;
+	margin-bottom: 2px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 3px 0 0;
+}
+
+.input-group {
+	&.addon-inside {
+		position: relative;
+
+		.input-group-addon {
+			position: absolute;
+			top: 6px;
+			left: 6px;
+			padding: 0;
+			background-color: transparent;
+			border-color: transparent;
+		}
+
+		input[type="text"],
+		input[type="password"],
+		input[type="email"] {
+			padding-left: 30px;
+			display: block;
+		}
+	}
+}
+
+.form-group {
+	label {
+		font-size: 12px;
+	}
+}
+
+input[type="text"]&,
+input[type="password"]&,
+input[type="email"]& {
+	border-radius: @input-border-radius;
+}
+
+.form-control {
+	border-radius: @input-border-radius;
+	line-height: 15px;
+
+	&::-webkit-input-placeholder { /* WebKit browsers */
+		color:    @gray-dark;
+	}
+
+	&:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	    color:    @gray-dark;
+	}
+
+	&::-moz-placeholder { /* Mozilla Firefox 19+ */
+	    color:    @gray-dark;
+	}
+
+	&:-ms-input-placeholder { /* Internet Explorer 10+ */
+	    color:    @gray-dark;
+	}
+}

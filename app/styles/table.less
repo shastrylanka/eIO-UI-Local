@@ -1,0 +1,77 @@
+@import "../include.less";
+
+.table-minimal {
+  thead tr th, 
+  tfoot tr th, 
+  thead tr td, 
+  tbody tr td,
+  tfoot tr td {
+    border:none;
+    padding-left:0;
+  }
+}
+
+.table-condensed {
+  thead tr th, 
+  tfoot tr th, 
+  thead tr td, 
+  tbody tr td,
+  tfoot tr td {
+    padding:2px;
+  }
+}
+
+.table thead tr th {
+  border-bottom: 1px solid @gray;
+}
+
+.table th {
+  color: #7E817D;
+  font-family: @font-family-sans-serif-bold;
+  font-size: @font-size-small;
+}
+
+.table tbody tr td span {
+  //max-width:225px;
+  text-overflow:ellipsis;
+  display:inline-block;
+  overflow:hidden;
+}
+
+.table {
+  tr {
+    td.word-break {
+      span {
+        word-break:break-all;
+        max-height:100px;
+        min-width:125px;
+      }
+    }
+  }
+  .align {
+    &.middle {
+      text-align:center;
+    }
+
+    &.right {
+      text-align:right;
+    }
+    &.left {
+      text-align:left;
+    }
+    &.active {
+      background-color: @purple-lighter;
+    }
+    vertical-align:middle;
+  }
+
+}
+
+table.stickyfooter {
+  tfoot {
+      display:none;
+      z-index: 1; /* put on top of other rows */
+      top:450px;
+      position: fixed;
+  }
+}

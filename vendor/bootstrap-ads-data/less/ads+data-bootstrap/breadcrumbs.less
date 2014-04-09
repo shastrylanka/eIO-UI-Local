@@ -1,0 +1,24 @@
+//
+// Breadcrumbs
+// --------------------------------------------------
+
+
+.breadcrumb {
+  > li {
+  	font-size: 14px;
+    a {
+      color: @breadcrumb-active-color;
+    }
+    &+li:before {
+      font-family: "adsdata-icons" !important;
+			content: "g";
+      color: @breadcrumb-color;
+      display: inline-block;
+      font-size: 11px;
+      padding: 0 7px 0 5px;
+    }
+  }
+  > .active {
+    color: @breadcrumb-active-color;
+  }
+}

@@ -1,0 +1,83 @@
+//
+// Growl
+// --------------------------------------------------
+
+.growler {
+	position: fixed;
+	width: 280px;
+	min-height: 80px;
+	padding: 1px;
+	background-color: #f9f9f9;
+	display: none;
+
+	.icon {
+		position: absolute;
+		top: 10px;
+		left: 15px;
+	}
+
+	.inner {
+		border-width: 1px;
+		border-style: solid;
+		margin: 5px;
+		padding: 10px 10px 10px 75px;
+		height: 68px;
+		color: @gray-darker;
+		font-size: 11px;
+		
+		.typ-title {
+			color: @black; 
+			text-transform: capitalize;
+			font-weight: 600;
+		}
+	}
+
+	.closer {
+		position: absolute;
+		right: 15px;
+		top: 10px;
+	}
+
+	&.warn, &.error, &.success {
+		.icon {
+			background-image: url(@sprite-url);
+			margin-top: 7px;
+		}
+	}
+
+	&.warn {
+		.icon {
+			background-position: -55px -17px;
+			width: 46px;
+			height: 45px;
+		}
+
+		.inner {
+			border-color: #f79c4b;
+		}
+	}
+
+	&.success {
+		.icon {
+			background-position: -107px -17px;
+			width: 46px;
+			height: 45px;
+		}
+
+		.inner {
+			border-color: #88b26e;
+		}
+	}
+
+	&.error {
+		.icon {
+			width: 47px;
+			height: 46px;
+			background-position: -2px -17px;
+		}
+
+		.inner {
+			border-color: #cb6c6c;
+		}
+	}
+}

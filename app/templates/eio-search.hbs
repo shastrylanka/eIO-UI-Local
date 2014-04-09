@@ -1,0 +1,26 @@
+					<div class="well-blue well-sm">Contact Information</div>
+						<div style="width:100%;">
+							<table style="width:100%;">
+								<tr>
+								{{#each}}
+									<td>
+									<div class="panel panel-info" style="margin-right:20px;margin-left:20px;">
+										<div class="panel-heading" style="font-weight:bold;">{{panelName}}</div>
+  										<table class="table">
+   											<tr><td class="contact-table-td">{{#if contactLabel}}{{contactLabel}}{{else}}Name{{/if}}:</td><td>{{contact}}</td></tr>
+   											{{#if company}}  <tr><td class="contact-table-td">  Company Name:</td><td>  {{company}}  </td></tr>  {{/if}}
+   											{{#if address}}  <tr><td class="contact-table-td">  Address :    </td><td>  {{address}}  </td></tr>  {{/if}}
+  											{{#if phone}}    <tr><td class="contact-table-td">  Phone :      </td><td>  {{phone}}    </td></tr>  {{/if}}
+    										{{#if fax}}      <tr><td class="contact-table-td">  Fax :        </td><td>  {{fax}}      </td></tr>  {{/if}}
+    										{{#if email}}    <tr><td class="contact-table-td">  Email :      </td><td>  {{email}}    </td></tr>  {{/if}}
+ 										</table>
+									</div>
+									</td>
+									
+								{{/each}}
+								</tr>
+							</table>
+						</div>
+				</div>
+					
+					

@@ -1,0 +1,187 @@
+<div class="container-fluid" >
+	<div class="row-fluid">
+		<div class='inside'>
+			<div>
+				{{{termsCondDetail}}}
+				{{{termsCondSummary}}}
+			</div>
+			<br><br>
+			<div class="well-blue well-sm">Order Information</div>
+			<div class="panel panel-primary">
+	 			<div class="panel-heading">
+	  				<h3 class="panel-title">Market Place Summary</h3>
+	  			</div>
+				<div class="table-scroll">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Account Name</th>
+								<th>Account Number</th>
+								<th>Account Type</th>
+								<th>Start Date</th>
+								<th>End Date</th>
+								<th>Cap Type</th>
+								<th>Cap Amount</th>
+								<th>PO #</th>
+							</tr>							
+						</thead>
+						<tbody>
+							{{#each content.lines}}
+							<tr>
+								<td>{{accountName}}</td>
+								<td>{{accountNumber}}</td>
+								<td>{{accountType}}</td>
+								<td>{{startDate}}</td>
+								<td>{{endDate}}</td>
+								<td>{{capType}}</td>
+								<td>{{capAmount}}</td>
+								<td>{{poNumber}}</td>
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+						
+				</div>
+			</div>
+			
+			<div class="panel panel-primary">
+	 			<div class="panel-heading">
+	  				<label class="panel-title">Yahoo Premium Ads</label>
+	  				<label class="panel-title" style="float:right;margin-right:10px;font:14px arial,sans-serif;"> Campaign Start Date : 18-Apr-2014 &nbsp;&nbsp; Campaign End Date : 23-May 2014</label>
+	  			</div>
+				<div class="table-scroll">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Line Id</th>
+								<th>Placement Name</th>
+								<th>Start Date</th>
+								<th>End Date</th>
+								<th>Pricing Type</th>
+								<th>Cost</th>
+								<th>Units</th>
+								<th>Amount</th>
+							</tr>							
+						</thead>
+						<tbody>
+							{{#each content.tables}}
+							<tr>
+								<td>{{lineId}}</td>
+								<td>{{placementName}}</td>
+								<td>{{startDate}}</td>
+								<td>{{endDate}}</td>
+								<td>{{pricingType}}</td>
+								<td>{{cost}}</td>
+								<td>{{units}}</td>
+								<td>{{amount}}</td>
+							</tr>
+							{{/each}}
+						</tbody>
+					</table>
+						
+				</div>
+				<div class="panel-heading">
+	  				<label class="panel-title">Placement Total</label>
+	  				<label class="panel-title" style="float:right;margin-right:20px;">$8.00</label>
+	  			</div>
+			</div>
+			
+			<div class="panel panel-primary">
+	  			<div class="panel-heading">
+	    			<h3 class="panel-title">Comments</h3>
+	  			</div>
+				<table class='table'>
+					<th><td>{{{comments}}}</td></th>
+				</table>
+			</div>
+			<br><br>
+			<div style="width:100%;">
+				<div class="well-blue well-sm">Contact Information</div>
+				<div class="row">
+				{{#each contacts}}
+					{{is-equal panelName 'Advertizer'}}
+					<div class="col-md-4" >
+						<div class="panel panel-primary" >
+							<div class="panel-heading" style="font-weight:bold;">{{panelName}}</div>
+							<table class="table">
+								<tr>
+									<th class="contact-table-td">{{#if contactLabel}}{{contactLabel}}{{else}}Name{{/if}}:</th>
+									<td>{{contact}}</td>
+								</tr>
+								{{#if company}}
+								<tr>
+									<th class="contact-table-td"> Company Name:</th>
+									<td> {{company}} </td>
+								</tr>
+								{{/if}}
+								{{#if address}}
+								<tr>
+									<th class="contact-table-td"> Address : </th>
+									<td> {{address}} </td>
+								</tr>
+								{{/if}}
+								{{#if phone}}
+								<tr>
+									<th class="contact-table-td"> Phone : </th>
+									<td> {{phone}} </td>
+								</tr>
+								{{/if}}
+								{{#if fax}}
+								<tr>
+									<th class="contact-table-td"> Fax : </th>
+									<td> {{fax}} </td>
+								</tr>
+								{{/if}}
+								{{#if email}}
+								<tr>
+									<th class="contact-table-td"> Email : </th>
+									<td> {{email}} </td>
+								</th>
+								{{/if}}
+							</table>
+						</div>
+					</div>
+				<!-- For triggering a new line from the variable 'next' from models/contact.js-->
+				<!--{{#if next}}</div><div class="row">{{/if}}-->
+				{{/each}}
+				</div>
+			</div>
+			 						
+			<br><br>
+			<div style="text-align:center">		
+				<button type="button" {{action "accept"}} class="btn btn-primary">Continue</button>
+    			&nbsp&nbsp<button type="button" class="btn btn-primary">Reject</button>
+    		</div>
+		</div>
+	</div>
+</div>
+ <!-- /.container-fluid -->
+
+<!-- Modal -->
+<div class="modal fade" id="tcModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Master Terms and Conditions and Program Terms</h4>
+         </div>
+         <div class="modal-body">
+         </div>
+         <div class="modal-footer">
+            <div class="input-group">
+               <span class="input-group-addon">
+               <label><input type="radio" name='r' value='Accept'> I accept the terms & Conditions</label><br>
+               <label><input type="radio" name='r' value='Reject'> I do not accept the terms & Conditions</label>
+               </span>
+            </div>
+            <!-- /input-group -->
+            <br>
+            <button {{action "tcAccept"}} type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
+            <button type="button" class="btn btn-primary">Reject</button>
+         </div>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

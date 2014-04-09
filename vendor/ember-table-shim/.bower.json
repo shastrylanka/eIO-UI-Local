@@ -1,0 +1,34 @@
+{
+  "name": "ember-table-shim",
+  "version": "0.2.0",
+  "description": "Shim for ember table.",
+  "main": "ember-table.js",
+  "keywords": [
+    "ember",
+    "ember-table"
+  ],
+  "license": "BSD",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "jquery-ui": "~1.10.1",
+    "jquery-mousewheel": "~3.1.3",
+    "ember": "http://builds.emberjs.com/stable/ember.js"
+  },
+  "homepage": "https://github.com/danjamin/ember-table-shim",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.0",
+    "commit": "15a6dc8e0e6c26da6f45baa41fe228e949ccc13f"
+  },
+  "_source": "git://github.com/danjamin/ember-table-shim.git",
+  "_target": "*",
+  "_originalSource": "ember-table-shim"
+}

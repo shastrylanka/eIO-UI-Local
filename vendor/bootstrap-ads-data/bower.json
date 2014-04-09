@@ -1,0 +1,33 @@
+{
+  "name": "bootstrap-ads-data",
+  "version": "1.1.5",
+  "ignore": [
+      "_includes",
+      "_layouts",
+      "assets",
+      "bundle",
+      "examples",
+      ".editorconfig",
+      ".gitignore",
+      ".travis.yml",
+      "_config.yml",
+      "browserstack.json",
+      "components.html",
+      "composer.json",
+      "CONTRIBUTING.md",
+      "css.html",
+      "customize.html",
+      "getting-started.html",
+      "Gruntfile.js",
+      "index.html",
+      "javascript.html",
+      "LICENSE",
+      "package.json",
+      "README.md",
+      "validation-report.json",
+      "validation-status.json"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.0"
+  }
+}

@@ -1,0 +1,523 @@
+<div class="container-fluid" >
+	<div class="row-fluid">
+		<div class='inside'>
+			<div>
+				{{ord.io.termsCondDetail}}
+            	{{ord.io.termsCondSummary}}
+			</div>
+			<br><br>
+			<div class="well-blue well-sm">Order Information</div>
+			
+			<div class="panel panel-custom">
+	 			<div class="panel-heading">
+	  				<label class="panel-title">Yahoo Premium Ads</label>
+	  				<label class="panel-title" style="float:right;margin-right:10px;font:14px arial,sans-serif;"> Campaign Start Date : 18-Apr-2014 &nbsp;&nbsp; Campaign End Date : 23-May 2014</label>
+	  			</div>
+				
+				<table class="table" style="width:99%;">
+					<thead>
+						<tr>
+							<th class="width10">Line Id</th>
+							<th class="width30">Placement Name</th>
+							<th class="width10">Start Date</th>
+							<th class="width10">End Date</th>
+							<th class="width10">Pricing Type</th>
+							<th class="width10">Cost</th>
+							<th class="width10">Units</th>
+							<th class="width10" style="text-align:right;">Amount</th>
+						</tr>							
+					</thead>
+				</table>
+				
+				<div class="table-scroll">
+					<table class="table table-striped">
+						<tbody>
+					      {{#each ord.io.lineItems}}
+					     	
+					         <tr>
+					            <td class="width10">{{lineId}}</td>
+					            <td class="width30">{{property}}</td>
+					            <td class="width10">{{format-date startDateStr}}</td>
+					            <td class="width10">{{format-date endDateStr}}</td>
+					            <td class="width10">{{lineType}}</td>
+					            <td class="width10">{{cpm}}</td>
+					            <td class="width10">{{impressions}}</td>
+					            <td class="width10" style="text-align:right;">{{amount}}</td>
+					         </tr>
+					       
+					       {{/each}} 
+					     </tbody>
+					</table>
+						
+				</div>
+				<div class="panel-heading">
+	  				<label class="panel-title">Placement Total</label>
+	  				<label class="panel-title" style="float:right;">$4199.00</label>
+	  			</div>
+			</div>
+			
+			<div class="panel panel-custom">
+	 			<div class="panel-heading">
+	  				<label class="panel-title">Credit/Fee Details</label>
+	  			</div>
+	  			<table class="table" style="width:99%;">
+	  				<thead>
+							<tr>
+								<th class="width25">Line Id</th>
+								<th class="width25">Credit/Fee Type</th>
+								<th class="width25">Start Date</th>
+								<th class="width25">End Date</th>
+								<th class="width25" style="text-align:right;">Amount</th>
+							</tr>							
+					</thead>
+	  			</table>
+				<div class="table-scroll">
+					<table class="table table-striped">
+						<tbody>
+					      {{#each ord.io.lineItems}}
+					     
+					         <tr>
+					            <td class="width25">{{lineId}}</td>
+					            <td class="width25">Consumer</td>
+					            <td class="width25">{{format-date startDateStr}}</td>
+					            <td class="width25">{{format-date endDateStr}}</td>
+					            <td class="width25" style="text-align:right;">{{amount}}</td>
+					         </tr>
+					       {{/each}} 
+					     </tbody>
+					</table>
+						
+				</div>
+				<div class="panel-heading">
+	  				<label class="panel-title">Credit/Fee Total</label>
+	  				<label class="panel-title" style="float:right;">$104.00</label>
+	  			</div>
+			</div>
+			
+			<div class="panel panel-custom">
+	 			<div class="panel-heading">
+	  				<label class="panel-title">Yahoo Premium Ads(including Fees and Credits)</label>
+	  			</div>
+	  		
+		  		<div class="rightalign">
+					<div class="panel">
+						<table class="table">
+							<tbody>
+						     <tr>
+						            <td class="gray-fill">Gross Amount</td>
+						            <td></td>
+						            <td>{{ord.io.discount.aptGrossAmount}}</td>					   
+						     </tr>
+						      <tr>
+						            <td>Agency Discount</td>
+						            <td>{{percent-format ord.io.discount.aptAgencyDiscPct}}</td>
+						            <td>{{ord.io.discount.aptAgencyDiscAmt}}</td>					   
+						     </tr>
+						      <tr>
+						            <td>Volume Discount</td>
+						            <td>4%</td>
+						            <td>50.80</td>					   
+						     </tr>
+						     <tr>
+						            <td>Fidelity Discount</td>
+						            <td>7%</td>
+						            <td>40.80</td>					   
+						     </tr>
+						     <tr>
+						            <td>Frequency Discount</td>
+						            <td>7%</td>
+						            <td>40.80</td>					   
+						     </tr>
+						      <tr>
+						            <td>Special Discount</td>
+						            <td>7%</td>
+						            <td>40.80</td>					   
+						     </tr>
+						      
+						      <tr>
+						            <td>Commission Discount</td>
+						            <td>7%</td>
+						            <td>40.80</td>					   
+						     </tr>
+						      <tr>
+						            <td class="gray-fill">Net Amount</td>
+						            <td></td>
+						            <td>{{ord.io.discount.netAmount}}</td>					   
+						     </tr>  
+						     </tbody>
+						</table>
+					</div>	
+				</div>
+			</div>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			
+			<div class="panel panel-custom">
+	 			<div class="panel-heading">
+	  				<label class="panel-title">Yahoo Audience Ads (All ads specified below are Preemptible ads)</label>
+	  				<label class="panel-title" style="float:right;margin-right:10px;font:14px arial,sans-serif;"> Start Date : 18-Apr-2014 &nbsp;&nbsp; End Date : 23-May 2014</label>
+	  			</div>
+				<table class="table" style="width:99%;">
+					<thead>
+						<tr>
+							<th class="width10">Line Id</th>
+							<th class="width30">Placement Name</th>
+							<th class="width10">Start Date</th>
+							<th class="width10">End Date</th>
+							<th class="width10">Pricing Type</th>
+							<th class="width10">Cost</th>
+							<th class="width10">Units</th>
+							<th class="width10" style="text-align:right;">Budget</th>
+						</tr>							
+					</thead>
+				</table>
+				
+				<div class="table-scroll">
+					<table class="table table-striped">
+						<tbody>
+					      {{#each ord.io.lineItems}}
+					     
+					         <tr>
+					            <td class="width10">{{lineId}}</td>
+					            <td class="width30">{{property}}</td>
+					            <td class="width10">{{format-date startDateStr}}</td>
+					            <td class="width10">{{format-date endDateStr}}</td>
+					            <td class="width10">{{lineType}}</td>
+					            <td class="width10">{{cpm}}</td>
+					            <td class="width10">{{impressions}}</td>
+					            <td class="width10" style="text-align:right;">{{amount}}</td>
+					         </tr>
+					       {{/each}} 
+					     </tbody>
+					</table>
+						
+				</div>
+				<div class="panel-heading">
+	  				<label class="panel-title">Yahoo Audience Ads Total</label>
+	  				<label class="panel-title" style="float:right;">$419.00</label>
+	  			</div>
+			</div>
+			
+			<div class="panel panel-custom">
+	 			<div class="panel-heading">
+	  				<label class="panel-title">Order Total</label>
+	  			</div>
+	  			<div class="rightalign">
+					<div class="panel">
+						<table class="table">
+							<tbody>
+					     	<tr>
+					            <td class="gray-fill">Billing Currency</td>
+					            <td>USD</td>					   
+					     	</tr>
+					      	<tr>
+					            <td class="gray-fill">Order Total</td>
+					            <td>4450.20</td>					   
+					     	</tr>
+					    	</tbody>
+						</table>
+					</div>	
+				</div>
+			</div>
+			<br><br><br><br>
+			
+			<div class="panel panel-custom">
+	 			<div class="panel-heading">
+	  				<h3 class="panel-title">Market Place Summary</h3>
+	  			</div>
+				<table class="table" style="width:99%;">
+					<thead>
+						<tr>
+							<th class="width25">Account Name</th>
+							<th class="width15">Account Number</th>
+							<th class="width15">Account Type</th>
+							<th class="width10">Start Date</th>
+							<th class="width10">End Date</th>
+							<th class="width10">Cap Type</th>
+							<th class="width10">Cap Amount</th>
+							<th class="width5">PO #</th>
+						</tr>							
+					</thead>
+				</table>
+				
+				<div class="table-scroll">
+					<table class="table table-striped">
+						<tbody>
+					      {{#each ord.io.lineItems}}
+					     
+					         <tr>
+					         	<td class="width25">{{property}}</td>
+					            <td class="width15">{{lineId}}</td>
+					            <td class="width15">{{productType}}</td>
+					            <td class="width10">{{format-date startDateStr}}</td>
+					            <td class="width10">{{format-date endDateStr}}</td>
+					            <td class="width10">{{lineType}}</td>
+					            <td class="width10">{{amount}}</td>
+					            <td class="width5">{{impressions}}</td>
+					         </tr>
+					       {{/each}} 
+					     </tbody>
+					</table>
+						
+				</div>
+			</div>
+			
+			<div class="panel panel-custom">
+	  			<div class="panel-heading">
+	    			<h3 class="panel-title">Comments</h3>
+	  			</div>
+				<table class='table'>
+					<th><td>{{ord.io.comments.text}}</td></th>
+				</table>
+			</div>
+			
+			<br><br>
+			
+			<div style="width:100%;">
+				<div class="well-blue well-sm">Contact Information</div>
+				<div class="row">
+                     <div class="col-md-4">
+                        <div class="panel panel-custom" >
+                           <div class="panel-heading" style="font-weight:bold;">Yahoo! Account Director</div>
+                              <table class="table">
+                                    <tr>
+                                       <th class="contact-table-td">  Name:</th>
+                                       <td>  {{ord.io.accountExec.firstName}}  </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Phone :      </th>
+                                       <td>  {{ord.io.accountExec.phone}}    </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Fax :        </th>
+                                       <td>  {{ord.io.accountExec.fax}}      </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Email :      </th>
+                                       <td>  {{ord.io.accountExec.email}}    </td>
+                                    </th>
+                              </table>
+                        	</div>
+                     	</div> 
+                     <div class="col-md-4">
+                        <div class="panel panel-custom" >
+                           <div class="panel-heading" style="font-weight:bold;">Yahoo! Account Manager</div>
+                              <table class="table">
+                                    <tr>
+                                       <th class="contact-table-td">  Name:</th>
+                                       <td>  {{ord.io.accountManager.firstName}}  </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Phone :      </th>
+                                       <td>  {{ord.io.accountManager.phone}}    </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Fax :        </th>
+                                       <td>  {{ord.io.accountManager.fax}}      </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Email :      </th>
+                                       <td>  {{ord.io.accountManager.email}}    </td>
+                                    </th>
+                              </table>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="panel panel-custom" >
+                           <div class="panel-heading" style="font-weight:bold;">Yahoo! Campaign Manager</div>
+                              <table class="table">
+                                    <tr>
+                                       <th class="contact-table-td">  Name:</th>
+                                       <td>  {{ord.io.accountManager.firstName}}  </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Phone :      </th>
+                                       <td>  {{ord.io.accountManager.phone}}    </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Fax :        </th>
+                                       <td>  {{ord.io.accountManager.fax}}      </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Email :      </th>
+                                       <td>  {{ord.io.accountManager.email}}    </td>
+                                    </th>
+                              </table>
+                        </div>
+                     </div> 
+               </div> 
+               <div class="row">
+                     <div class="col-md-4">
+                        <div class="panel panel-custom" >
+                           <div class="panel-heading" style="font-weight:bold;">Advertiser</div>
+                              <table class="table">
+                                    <tr>
+                                       <th class="contact-table-td">  Name:</th>
+                                       <td>  {{ord.io.advertiser.name}}  </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Address :    </th>
+                                       <td>  {{ord.io.advertiser.address.street}} {{ord.io.advertiser.address.city}} {{ord.io.advertiser.address.state}} {{ord.io.advertiser.address.country}} {{ord.io.advertiser.address.zip}}   </td>
+                                    </tr>
+                              </table>
+                        </div>
+                     </div> 
+                     
+                     <div class="col-md-4">
+                        <div class="panel panel-custom" >
+                           <div class="panel-heading" style="font-weight:bold;">Agency</div>
+                              <table class="table">
+                                    <tr>
+                                       <th class="contact-table-td">  Name:</th>
+                                       <td>  {{ord.io.agency.name}}  </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Address :    </th>
+                                       <td>  {{ord.io.agency.address.street}} {{ord.io.agency.address.city}} {{ord.io.agency.address.state}} {{ord.io.agency.address.country}} {{ord.io.agency.address.zip}}   </td>
+                                    </tr>
+                              </table>
+                        </div>
+                     </div> 
+               </div>
+               <div class="row">
+                     <div class="col-md-4">
+                        <div class="panel panel-custom" >
+                           <div class="panel-heading" style="font-weight:bold;">Billing Contact Information </div>
+                              <table class="table">
+                                    <tr>
+                                       <th class="contact-table-td">  Company Name:</th>
+                                       <td>  {{ord.io.contInformation.billingContact.companyName}}  </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Address :    </th>
+                                       <td>  {{ord.io.contInformation.billingContact.address.street}} {{ord.io.contInformation.billingContact.address.city}} {{ord.io.contInformation.billingContact.address.state}} {{ord.io.contInformation.billingContact.address.country}} {{ord.io.contInformation.billingContact.address.zip}}  </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Phone :      </th>
+                                       <td>  {{ord.io.contInformation.billingContact.phone}}    </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Fax :        </th>
+                                       <td>  {{ord.io.contInformation.billingContact.fax}}      </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Email :      </th>
+                                       <td>  {{ord.io.contInformation.billingContact.email}}    </td>
+                                    </th>
+                              </table>
+                        </div>
+                     </div> 
+                     <div class="col-md-4">
+                        <div class="panel panel-custom" >
+                           <div class="panel-heading" style="font-weight:bold;">Media Contact Information </div>
+                              <table class="table">
+                                    <tr>
+                                       <th class="contact-table-td">  Company Name:</th>
+                                       <td>  {{ord.io.contInformation.mediaContact.companyName}}  </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Address :    </th>
+                                       <td>  {{ord.io.contInformation.mediaContact.address.street}} {{ord.io.contInformation.mediaContact.address.city}} {{ord.io.contInformation.mediaContact.address.state}} {{ord.io.contInformation.mediaContact.address.country}} {{ord.io.contInformation.mediaContact.address.zip}} </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Phone :      </th>
+                                       <td>  {{ord.io.contInformation.mediaContact.phone}}    </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Fax :        </th>
+                                       <td>  {{ord.io.contInformation.mediaContact.fax}}      </td>
+                                    </tr>
+                                    <tr>
+                                       <th class="contact-table-td">  Email :      </th>
+                                       <td>  {{ord.io.contInformation.mediaContact.email}}    </td>
+                                    </th>
+                              </table>
+                        </div>
+                     </div> 
+                </div> 
+			 						
+			<br><br>
+			<div style="text-align:center">		
+				<button type="button" {{action "accept"}} class="btn btn-primary-blue">Accept</button>
+    			&nbsp&nbsp<button type="button" class="btn btn-primary-blue">Reject</button>
+    		</div>
+		</div>
+	</div>
+</div>
+ <!-- /.container-fluid -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="tcModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Master Terms and Conditions</h4>
+         </div>
+         <div class="modal-body">
+         </div>
+         <div class="modal-footer">
+            <div class="input-group">
+               <span class="input-group-addon">
+               		<label><input type="radio" name='r' value='Accept'> I accept the terms & Conditions</label><br>
+               		<label><input type="radio" name='r' value='Reject'> I do not accept the terms & Conditions</label>
+               </span>
+            </div>
+            <!-- /input-group -->
+            <br>
+            <button {{action "tcAccept"}} type="button" class="btn btn-primary" data-dismiss="modal">Accept</button>
+            <button type="button" class="btn btn-primary">Reject</button>
+         </div>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="userDataModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal-dialog">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button {{action "cancel"}} type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Customer details</h4>
+         </div>
+         <div class="modal-body">
+            <form role="form">
+               <div class="form-group">
+                  <label for="fName">First Name</label>
+                  <!--input type="text" class="form-control" id="fName" placeholder="Enter First Name"-->
+                  {{view Ember.TextField class="form-control validate[required, maxSize[100]]" id="fName" valueBinding="model.name"}}
+               </div>
+               <div class="form-group">
+                  <label for="lName">Last Name</label>
+                  <input type="text" class="form-control" id="lName" placeholder="Enter Last Name">
+               </div>
+               <div class="form-group">
+                  <label for="cName">Company Name</label>
+                  <input type="text" class="form-control" id="cName" placeholder="Enter Company Name">
+               </div>
+               <div class="form-group">
+                  <label for="jTitle">Job Title</label>
+                  <input type="text" class="form-control" id="jTitle" placeholder="Enter Job title">
+               </div>
+               <div class="form-group">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter email">
+               </div>
+               <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+               </div>
+               <button {{action "save"}}  type="submit" class="btn btn-default">Submit</button>
+            </form>
+         </div>
+         <div class="modal-footer">
+         </div>
+      </div>
+      <!-- /.modal-content -->
+   </div>
+   <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

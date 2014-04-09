@@ -1,0 +1,22 @@
+// Button groups
+// --------------------------------------------------
+
+.btn .caret {
+	margin-top: -3px;
+	margin-left: 15px;
+}
+
+.btn-group.open {
+	.dropdown-toggle {
+		.box-shadow(none);
+	}
+
+	.btn-flat,
+	.btn-blank {
+		color: @gray-darker;
+	}
+}
+
+.btn-group > .btn-flat.dropdown-toggle:not(:first-child) {
+	border-left: none;
+}
